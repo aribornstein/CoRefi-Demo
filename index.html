@@ -33,14 +33,14 @@
   </body>
 <script>
   
-  window.onload = ()=>{
+  window.onload = () => {
     const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
     fetch('https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/guided_example.json')
     .then(response => response.json())
     .then(data => {
          const newData = Object.assign(corefi,data);
          console.log(newData);
-    } 
+    });
   };
 
  </script>
