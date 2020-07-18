@@ -32,15 +32,9 @@
     </div>
   </body>
 <script>
-  const demoUrls = {
-    "onboarding":'https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/onboarding_example.json',
-    "guided":'https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/guided_example.json',
-    "anntoation":'https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/annotation_example.json',
-    "review":''
-  };
-  
+ 
   function loadType(type) {
-     fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}.json`)
+     fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
     .then(response => response.json())
     .then(data => {
          corefi = Object.assign(corefi, data);
