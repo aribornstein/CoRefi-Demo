@@ -39,7 +39,7 @@
     "review":''
   };
   
-  loadType = function(type){
+  function loadType(type) {
      fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}.json`)
     .then(response => response.json())
     .then(data => {
