@@ -21,8 +21,9 @@
 <body>
   
   <co-refi></co-refi>
-  <button class="w3-button"><i>Italic</i></button>
-  <button class="w3-button"><b>Bold</b></button>
+  <button onClick="loadType('guided')">Guided Demo</button>
+  <button onClick="loadType('annotation')">Annotation Demo</button>
+  <button onClick="loadType('review')">Review Demo</button>
 
 
 </body>
@@ -39,8 +40,6 @@
           corefi = Object.assign(corefi, data);
         });
     }
-
-    loadType("guided");
   };
 
 </script>
