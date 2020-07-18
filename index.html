@@ -43,7 +43,7 @@ button {
 </style>
 <script>
   const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
-  function loadType(type) {
+  function load(type) {
     document.getElementsByTagName("co-refi")[0].style.display = "block"
     fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
       .then(response => response.json())
