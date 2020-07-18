@@ -31,6 +31,7 @@
 
 
   window.onload = () => {
+    const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
 
     function loadType(type) {
       fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
@@ -40,7 +41,6 @@
         });
     }
 
-    const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
     loadType("review");
   };
 
