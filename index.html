@@ -21,7 +21,7 @@
 <body>
   
   <co-refi style="display: none;"></co-refi>
-  <span style="display:block;text-align:center">
+  <span id="logo" style="display:block;text-align:center">
     <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
   </span>
   <span style="display:block;text-align:center">
@@ -49,7 +49,8 @@ button {
 <script>
   const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
   function load(type) {
-    document.getElementsByTagName("co-refi")[0].style.display = "block"
+    document.getElementById("logo").style.display = "none";
+    document.getElementsByTagName("co-refi")[0].style.display = "block";
     fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
       .then(response => response.json())
       .then(data => {
