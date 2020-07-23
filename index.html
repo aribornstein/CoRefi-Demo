@@ -20,7 +20,7 @@
 
 <body>
   
-  <div id="navigation " style="display:block;text-align:center">
+  <div id="navigation" style="display:block;text-align:center">
     <span id="logo" style="display:block;text-align:center">
       <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
     </span>
@@ -102,7 +102,7 @@ button:hover {
   const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
   function load(type) {
     document.getElementById("logo").style.display = "none";
-    document.getElementById("buttons").style.display = "none";
+    document.getElementById("navigation").style.display = "none";
     document.getElementsByTagName("co-refi")[0].style.display = "block";
     fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
       .then(response => response.json())
