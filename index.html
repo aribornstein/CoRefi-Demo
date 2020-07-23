@@ -25,25 +25,25 @@
       <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
     </span>
 
-    <button onClick="load('onboarding')">
+    <a class="button" href="https://aribornstein.github.io/corefidemo/?demo=onboarding" >
       <div class="tooltip">
         Tutorial Demo
         <span class="tooltiptext">Walkthrough CoRefi's features</span>
       </div>
-     </button>
-    <button onClick="load('guided')">
+     </a>
+    <button class="button" onClick="load('guided')">
       <div class="tooltip">
         Guided Demo
         <span class="tooltiptext">Learn how to make Coreference Decisions with CoRefi's guided onboarding.</span>
       </div>
     </button>
-    <button onClick="load('annotation')">
+    <button class="button" onClick="load('annotation')">
       <div class="tooltip">
         Annotation Demo
         <span class="tooltiptext">Annotate Documents with CoRefi.</span>
       </div>
     </button>
-    <button onClick="load('review')">
+    <button class="button"  onClick="load('review')">
       <div class="tooltip">
         Review Demo
         <span class="tooltiptext">Review a prior Annotation with CoRefi.</span>
@@ -58,7 +58,7 @@
   margin-top: 25px;
   margin-bottom: 25px;
 }
-button {
+.button {
   background-color: #2d9cdb; /* Cluster Blue */
   transition-duration: 0.4s;
   border: none;
@@ -70,7 +70,7 @@ button {
   font-size: 16px;
 }
   
-button:hover {
+.button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
   
@@ -99,17 +99,26 @@ button:hover {
 }
 </style>
 <script>
-  const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
+  const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;  
+  
   function load(type) {
-    document.getElementById("logo").style.display = "none";
-    document.getElementById("navigation").style.display = "none";
-    document.getElementsByTagName("co-refi")[0].style.display = "block";
-    fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
-      .then(response => response.json())
-      .then(data => {
-        corefi = Object.assign(corefi, data);
-      });
+   document.getElementById("logo").style.display = "none";
+   document.getElementById("navigation").style.display = "none";
+   document.getElementsByTagName("co-refi")[0].style.display = "block";
+   fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
+     .then(response => response.json())
+     .then(data => {
+       corefi = Object.assign(corefi, data);
+     });
   }
+  
+  const url_string = window.location;
+  const url = new URL(url_string);
+  const demoType = url.searchParams.get("demo");
+  if (demoType){
+    load(demoType);
+  }
+
 
 </script>
 
