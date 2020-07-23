@@ -25,10 +25,19 @@
     <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
   </span>
   <span style="display:block;text-align:center">
-    <button onClick="load('onboarding')">Onboarding Demo</button>
-    <button onClick="load('guided')">Guided Demo</button>
-    <button onClick="load('annotation')">Annotation Demo</button>
-    <button onClick="load('review')">Review Demo</button>
+    <button onClick="load('onboarding')">
+      Tutorial Demo
+      <span class="tooltiptext">Walkthrough CoRefi's features</span>
+    </button>
+    <button onClick="load('guided')">
+      Guided Demo
+    </button>
+    <button onClick="load('annotation')">
+      Annotation Demo
+    </button>
+    <button onClick="load('review')">
+      Review Demo
+    </button>
   </span>
 
 
@@ -50,6 +59,30 @@ button {
 button:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+  
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 </style>
 <script>
   const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
@@ -62,6 +95,8 @@ button:hover {
         corefi = Object.assign(corefi, data);
       });
   }
+  
+  
 
 </script>
 
