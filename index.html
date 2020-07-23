@@ -21,9 +21,12 @@
 <body>
   
   <div id="navigation" style="display:block;text-align:center">
-    <span id="logo" style="display:block;text-align:center">
-      <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
-    </span>
+    <a href="https://github.com/aribornstein/CoRefi" id="logo" style="display:block;text-align:center" target="_blank">
+      <div class="tooltip">
+        <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
+        <span class="tooltiptext">CoRefi Github Repo</span>
+      </div>
+    </a>
 
     <a class="button" href="https://aribornstein.github.io/corefidemo/?demo=onboarding" >
       <div class="tooltip">
@@ -70,7 +73,7 @@
   font-size: 16px;
 }
   
-.button:hover {
+.button:hover #logo:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
   
