@@ -24,7 +24,7 @@
   <span id="logo" style="display:block;text-align:center">
     <img src="https://cdn-images-1.medium.com/max/800/1*Q9bXCpOcpxlQ0olOZrcrDw.jpeg"/>
   </span>
-  <span style="display:block;text-align:center">
+  <div id="buttons" style="display:block;text-align:center">
     <button onClick="load('onboarding')">
       <div class="tooltip">
         Tutorial Demo
@@ -47,7 +47,8 @@
       <div class="tooltip">
         Review Demo
         <span class="tooltiptext">Review a prior Annotation with CoRefi.</span>
-      </div>    </button>
+      </div>    
+    </button>
   </span>
 
 
@@ -102,6 +103,7 @@ button:hover {
   const corefi = document.getElementsByTagName("co-refi")[0].vueComponent;
   function load(type) {
     document.getElementById("logo").style.display = "none";
+    document.getElementById("buttons").style.display = "none";
     document.getElementsByTagName("co-refi")[0].style.display = "block";
     fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
       .then(response => response.json())
@@ -109,8 +111,6 @@ button:hover {
         corefi = Object.assign(corefi, data);
       });
   }
-  
-  
 
 </script>
 
