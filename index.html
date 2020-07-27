@@ -112,6 +112,7 @@
    fetch(`https://raw.githubusercontent.com/aribornstein/CoRefi/master/src/data/${type}_example.json`)
      .then(response => response.json())
      .then(data => {
+       data["snackbarTimeout"] = 5000;
        corefi = Object.assign(corefi, data);
      });
   }
